@@ -114,8 +114,12 @@ class BinaryHeap:
         # If not, append item to the tail of self.data.
         # Do not return anything in the method.
         # Please follow pseudocode in Lecture 16 to implement this method.
-        self.data.append(item)
-        self.heapSize += 1
+        if len(self.data) > self.heapSize:
+            self.data[self.heapSize] = item
+            self.heapSize += 1
+        else:
+            self.data.append(item)
+            self.heapSize += 1
 
         i = self.heapSize - 1
 
