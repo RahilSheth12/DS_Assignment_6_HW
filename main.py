@@ -114,20 +114,16 @@ class BinaryHeap:
         # If not, append item to the tail of self.data.
         # Do not return anything in the method.
         # Please follow pseudocode in Lecture 16 to implement this method.
-        if len(self.data) > self.heapsize:
-            self.data[self.heapsize] = item
-            self.heapsize += 1
-        else:
-            self.data.append(item)
-            self.heapsize += 1
-            
-        i = self.heapsize - 1
-        
+        self.data.append(item)
+        self.heapSize += 1
+
+        i = self.heapSize - 1
+
         while i != 0 and self.data[BinaryHeap.parent(i)] < self.data[i]:
             self.data[i], self.data[BinaryHeap.parent(i)] = self.data[BinaryHeap.parent(i)], self.data[i]
-            
+
             i = BinaryHeap.parent(i)
-            
+
     def __iter__(self):
         # This implements "for item in BinaryHeap"
         # Yield each item in the current BinaryHeap.
