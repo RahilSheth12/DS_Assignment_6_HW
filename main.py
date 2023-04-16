@@ -80,7 +80,6 @@ class BinaryHeap:
             self.max_heapify(temporary)
 
     def pop_max(self):
-        # ! Need to remove or shorten the list. Can currently get everything in the right order, I just need to shorten it.
         assert not self.empty()
         # Pop out the maximum item in the BinaryHeap, then return this item.
         # After the maximum item is popped out, it won't be deleted from the list;
